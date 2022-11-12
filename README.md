@@ -1,6 +1,7 @@
 # liftai
+cool app to make sure you target muscle groups
 
-#Installing Python
+# Installing Python
 Navigate to https://www.python.org/downloads/release/python-3913/ and download Python 3.9.13 (must be this version)
 Install Visual Studio Code https://visualstudio.microsoft.com/
 Once python is installed go to system enviorment variables -> enviorment variables -> path under system variables -> new
@@ -19,7 +20,7 @@ Install django by running in a command prompt
 
 Navigate to repository in github and clone repository
 
-#To run the server 
+# To run the server 
 
 open a command prompt 
 navigate to c drive using ```cd..``` to go down a level and ```cd foldername``` to go up a level
