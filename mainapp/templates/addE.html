@@ -1,0 +1,27 @@
+<h1>Add exercise</h1>
+
+<form action="addrecord/" method="post">
+{% csrf_token %}
+Exercise Name:<br>
+<input name="name">
+<br><br>
+Exercise Id (format 1/0xxx)<br>
+<input name="id">
+<br><br>
+group 1<br>
+<input name="g1">
+<br><br>
+group 2<br>
+<input name="g2">
+<br><br>
+group 3<br>
+<input name="g3">
+<br><br>
+group 4<br>
+<input name="g4">
+<br><br>
+group 5<br>
+<input name="g5">
+<br><br>
+<input type="submit" value="Submit">
+</form>
