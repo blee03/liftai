@@ -1,0 +1,19 @@
+<h1>Members</h1>
+
+<table border="1">
+{% for x in mymembers %}
+<tr>
+<td>{{ x.name }}</td>
+<td>{{ x.exerciseId }}</td>
+<td>{{ x.group1 }}</td>
+<td>{{ x.group2 }}</td>
+<td>{{ x.group3 }}</td>
+<td>{{ x.group4 }}</td>
+<td>{{ x.group5 }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+<a href="/mainapp/add/">Add exercise</a>
+</p>
