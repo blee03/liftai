@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body{
+        font-family: 'Helvetica';
+
+    }
+</style>  
+    <!--header-->
+    <header style="background-color:#4C3A51"><img src="static/logo.png">
+        
+    </header>
+
+    <!--background-->
+    <body style="background-color:#4C3A51;">
+ 
+    </body>
+
+    <!--grid part-->
+    <head>
+        <style>
+        .item1 { grid-area: box1; }
+        .item2 { grid-area: box2; }
+        .item3 { grid-area: box3; }
+        .item4 { grid-area: box4; }
+        .item5 { grid-area: box5; }
+        .item6 { grid-area: box6; }
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'box1 box1 box1 box2 box2 box2'
+            'box1 box1 box1 box2 box2 box2'
+            'box3 box3 box3 box4 box4 box4'
+            'box3 box3 box3 box4 box4 box4'
+            'box5 box5 box5 box6 box6 box6'
+            'box5 box5 box5 box6 box6 box6';
+          gap: 20px;
+          background-color: #4C3A51;
+          padding: 20px;
+          border-radius: 25px;
+        }
+        
+        .grid-container > div {
+          background-color: #B25068;
+          text-align: left;
+          padding-top: 30px;
+          padding-right: 30px;
+          padding-bottom: 30px;
+          padding-left: 30px;
+          font-size: 25px;
+          color:#E7AB79;
+          border-radius: 25px;
+        }
+        </style>
+        </head>
+        <body>
+        
+            <!--contents of the individual containers-->
+        <div class="grid-container">
+          <div class="item1">
+            Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/mEbC-y4hs9Q" title="Hammer curls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="item2">
+             Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/fO82H3F0rw4" title="Calf extensions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="item3">
+            Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/vK0haV9km24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>  
+          <div class="item4">
+            Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/vK0haV9km24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="item5">
+            Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/vK0haV9km24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="item6">
+            Name:<br><br>How to:
+            <iframe align="right" style="border-radius: 25px;" width="300" height="300" src="https://www.youtube.com/embed/vK0haV9km24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>            
+</html>
