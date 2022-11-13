@@ -2,24 +2,33 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from .models import Input
+from .models import Exercise
 
 #pushes object to webpage
-def index(request):
-  testInput = Input.objects.all().values()
-  template = loader.get_template('indexE.html')
+def results(request):
+  testExercises = Exercise.objects.all().values()
+  template = loader.get_template('results.html')
   context = {
-    'htmlOutput': testInput,
+    'htmlOutput': testExercises,
   }
   return HttpResponse(template.render(context, request))
 
 #display add page
-def add(request):
-  template = loader.get_template('addE.html')
+def arms(request):
+  template = loader.get_template('arms.html')
+  return HttpResponse(template.render({}, request))
+
+def legs(request):
+  template = loader.get_template('legs.html')
+  return HttpResponse(template.render({}, request))
+
+def home(request):
+  template = loader.get_template('home.html')
   return HttpResponse(template.render({}, request))
 
 #delete everything in a model
 def delete_everything(self):
-  Input.objects.all().delete()
+  self.objects.all().delete()
 
 #recieve exersize from user input and place into list for processing
 def sendExercise(request):
@@ -41,49 +50,46 @@ def sendExercise(request):
   arrayOut.append(1) if request.POST['arms'] == "exercise15" else arrayOut.append(0)
   arrayOut.append(1) if request.POST['arms'] == "exercise16" else arrayOut.append(0)  
 
-  #create a fake model to clear it
-  testInput = Input(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-  delete_everything(testInput)
+  testExercises = Exercise(0)
+  delete_everything(Exercise)
 
-  testInput = Input(
-  e0 = arrayOut[0], 
-  e1 = arrayOut[1], 
-  e2 = arrayOut[2],
-  e3 = arrayOut[3], 
-  e4 = arrayOut[4], 
-  e5 = arrayOut[5], 
-  e6 = arrayOut[6], 
-  e7 = arrayOut[7], 
-  e8 = arrayOut[8], 
-  e9 = arrayOut[9], 
-  e10 = arrayOut[10], 
-  e11 = arrayOut[11], 
-  e12 = arrayOut[12], 
-  e13 = arrayOut[13], 
-  e14 = arrayOut[14], 
-  e15 = arrayOut[15], 
-  ) 
-  testInput.save()
-  return HttpResponseRedirect(reverse('indexE'))
+  foundExercises = findones(arrayOut)
+
+  testExercises = Exercise(eId=foundExercises[0])
+  testExercises.save()
+
+  # #found = matchlist(foundExercises, "arms.txt")
+
+  # #testInput = Input(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+  # #delete_everything(Input)
+
+  # testInput = Input(
+  # e0 = found[0], 
+  # e1 = found[1], 
+  # e2 = found[2],
+  # e3 = found[3], 
+  # e4 = found[4], 
+  # e5 = found[5], 
+  # e6 = found[6], 
+  # e7 = found[7], 
+  # e8 = found[8], 
+  # e9 = found[9], 
+  # e10 = found[10], 
+  # e11 = found[11], 
+  # e12 = found[12], 
+  # e13 = found[13], 
+  # e14 = found[14], 
+  # e15 = found[15], 
+  # ) 
+  # testInput.save()
+
+  template = loader.get_template('results.html')
+  return HttpResponse(template.render({}, request))
 
 #find the indicies where the user has selected the excersize and return them in vector form
 def findones(vector):
-    indiciesVector = []
-    for i in range(vector.len):
+    indiciesVector = [] 
+    for i in range(len(vector)):
         if (vector[i] ==  1):
             indiciesVector.append(i)
     return indiciesVector
-
-#take the list of selected excersizes and return the first list that matches the criteria
-def matchlist(ind, filename):
-    thearray = []
-    file3 = open(filename, "r")
-    thearray = file3.read()
-    file3.close()
-
-    for i in range(thearray.len):
-        for j in range(ind.len):
-            if (thearray[i][j] != 1):
-                break
-        return thearray[i]
-    Exception("unable to find a match for your excersize")

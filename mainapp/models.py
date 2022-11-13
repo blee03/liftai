@@ -17,3 +17,6 @@ class Input(models.Model):
   e13 = models.IntegerField()
   e14 = models.IntegerField()
   e15 = models.IntegerField()
+
+class Exercise(models.Model):
+  eId = models.IntegerField()
