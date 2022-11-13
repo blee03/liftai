@@ -1,33 +1,8 @@
+<!DOCTYPE html>
+<html>
 {% load static %}
-<h1><center><img src="{% static 'mainapp/logo.png' %}"
-    height="100"
-    length="250"
-</h1>
-</style>   
-<form action = "sendExercise/" method="post">
-    {% csrf_token %}
-    <select name="arms">
-        <option value="empty"> </option>
-        <option value="exercise1">Flat Bench</option>
-        <option value="exercise2">Overhead Press</option>
-        <option value="exercise3">Bent Over Rows</option>
-        <option value="exercise4">Tricep Pushdown</option>
-        <option value="exercise5">Standard Curls</option>
-        <option value="exercise6">Chest Fly</option>
-        <option value="exercise7">Lat Pulldown</option>
-        <option value="exercise8">Preacher Curl</option>
-        <option value="exercise9">Lat Fly</option>
-        <option value="exercise10">Incline Bench</option>
-        <option value="exercise11">Rear Delt Fly</option>
-        <option value="exercise12">Chest Press</option>
-        <option value="exercise13">Reverse Curls</option>
-        <option value="exercise14">Hammer Curl</option>
-        <option value="exercise15">Dumbell Rows</option>
-        <option value="exercise16">Horizontal Cable Pull</option>
-    </select>
-    <input type="submit" value="Find Workouts for Arms!" />
-</form>
-
+<head>
+</head>
 <style>
     select{
         margin-bottom: 20px;
@@ -37,11 +12,37 @@
         border: 100px;
         padding: 20px;
         border-radius: 100px;
-
+    body{
+        background-color: 4C3A51;
+    }
 }
 </style>
-<style>
-    body{
-        background-color: #E7AB79;
-    }
-</style>
+<body>
+<h1><center><img src="{% static 'mainapp/logo.png' %}"
+    height="100"
+    length="250"
+</h1>
+</style>   
+<form action = "sendExerciseArms/" method="post">
+    {% csrf_token %}
+    <select name="arms">
+        <option value="exercise0">Flat Bench</option>
+        <option value="exercise1">Overhead Press</option>
+        <option value="exercise2">Bent Over Rows</option>
+        <option value="exercise3">Standard Curls</option>
+        <option value="exercise4">Tricep Pushdown</option>
+        <option value="exercise5">Chest Fly</option>
+        <option value="exercise6">Lat Pulldown</option>
+        <option value="exercise7">Preacher Curl</option>
+        <option value="exercise8">Lat Fly</option>
+        <option value="exercise9">Incline Bench</option>
+        <option value="exercise10">Rear Delt Fly</option>
+        <option value="exercise11">Chest Press</option>
+        <option value="exercise12">Reverse Curls</option>
+        <option value="exercise13">Hammer Curl</option>
+        <option value="exercise14">Dumbell Rows</option>
+        <option value="exercise15">Horizontal Cable Pull</option>
+    </select>
+    <input type="submit" value="Find Workouts for Arms!" />
+</form>
+<body>

@@ -5,26 +5,26 @@
 </h1>
 </style>   
 
-<form action = "sendExercise/" method="post">
+<form action = "sendExerciseLegs/" method="post">
     {% csrf_token %}
-    <select name="arms">
+    <select name="legs">
         <option value="empty"> </option>
-        <option value="exercise1">Flat Bench</option>
-        <option value="exercise2">Overhead Press</option>
-        <option value="exercise3">Bent Over Rows</option>
-        <option value="exercise4">Standard Rows</option>
-        <option value="exercise5">Tricep Pushdown</option>
-        <option value="exercise6">Chest Fly</option>
-        <option value="exercise7">Last Pulldown</option>
-        <option value="exercise8">Preacher Curl</option>
-        <option value="exercise9">Lat Fly</option>
-        <option value="exercise10">Incline Bench</option>
-        <option value="exercise11">rear delt fly</option>
-        <option value="exercise12">chest press</option>
-        <option value="exercise13">reverse curls</option>
-        <option value="exercise14">hammer curls</option>
-        <option value="exercise15">dumbell rows</option>
-        <option value="exercise16">horizonat cable pull</option>
+        <option value="exercise0">Dead Lift</option>
+        <option value="exercise1">Squat</option>
+        <option value="exercise2">Lunges</option>
+        <option value="exercise3">Abductor</option>
+        <option value="exercise4">Adductor</option>
+        <option value="exercise5">Calf Machine</option>
+        <option value="exercise6">Leg Extensions</option>
+        <option value="exercise7">Leg Curls</option>
+        <option value="exercise8">Kickbacks</option>
+        <option value="exercise9">Leg Press</option>
+        <option value="exercise10">Cable Squat</option>
+        <option value="exercise11">Band Abductions</option>
+        <option value="exercise12">Seated Band Abduction</option>
+        <option value="exercise13">Romanian Deadlift</option>
+        <option value="exercise14">Hip Thrust</option>
+        <option value="exercise15">Single Leg Squat</option>
     </select>
     <input type="submit" value=&#8594 />
 </form>
