@@ -83,8 +83,7 @@ def sendExercise(request):
   # ) 
   # testInput.save()
 
-  template = loader.get_template('results.html')
-  return HttpResponse(template.render({}, request))
+  return HttpResponseRedirect('results')  
 
 #find the indicies where the user has selected the excersize and return them in vector form
 def findones(vector):
