@@ -20,3 +20,8 @@ class Input(models.Model):
 
 class Exercise(models.Model):
   eId = models.IntegerField()
+
+class Website(models.Model):
+  name = models.CharField(max_length=255)
+  description = models.TextField()
+  link = models.TextField()

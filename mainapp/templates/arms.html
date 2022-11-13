@@ -1,5 +1,5 @@
 {% load static %}
-<h1><center><img src="{% static 'logo.png' %}"
+<h1><center><img src="{% static 'mainapp/logo.png' %}"
     height="100"
     length="250"
 </h1>
@@ -8,36 +8,35 @@
     {% csrf_token %}
     <select name="arms">
         <option value="empty"> </option>
-        <option value="exercise1">flat bench</option>
-        <option value="exercise2">overhead press</option>
-        <option value="exercise3">bent over rows</option>
-        <option value="exercise4">standard rows</option>
-        <option value="exercise5">tricep pushdown</option>
-        <option value="exercise6">chest fly</option>
-        <option value="exercise7">last pulldown</option>
-        <option value="exercise8">preacher curl</option>
-        <option value="exercise9">lat fly</option>
-        <option value="exercise10">incline bench</option>
-        <option value="exercise11">rear delt fly</option>
-        <option value="exercise12">chest press</option>
-        <option value="exercise13">reverse curls</option>
-        <option value="exercise14">hammer curls</option>
-        <option value="exercise15">dumbell rows</option>
-        <option value="exercise16">horizonat cable pull</option>
+        <option value="exercise1">Flat Bench</option>
+        <option value="exercise2">Overhead Press</option>
+        <option value="exercise3">Bent Over Rows</option>
+        <option value="exercise4">Tricep Pushdown</option>
+        <option value="exercise5">Standard Curls</option>
+        <option value="exercise6">Chest Fly</option>
+        <option value="exercise7">Lat Pulldown</option>
+        <option value="exercise8">Preacher Curl</option>
+        <option value="exercise9">Lat Fly</option>
+        <option value="exercise10">Incline Bench</option>
+        <option value="exercise11">Rear Delt Fly</option>
+        <option value="exercise12">Chest Press</option>
+        <option value="exercise13">Reverse Curls</option>
+        <option value="exercise14">Hammer Curl</option>
+        <option value="exercise15">Dumbell Rows</option>
+        <option value="exercise16">Horizontal Cable Pull</option>
     </select>
     <input type="submit" value="Find Workouts for Arms!" />
 </form>
 
 <style>
     select{
-margin-bottom: 20px;
-margin-top: 40px;
-color: black;
-
-background-color: khaki;
-border: 100px;
-padding: 20px;
-border-radius: 100px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        color: black;
+        background-color: khaki;
+        border: 100px;
+        padding: 20px;
+        border-radius: 100px;
 
 }
 </style>
