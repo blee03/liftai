@@ -1,38 +1,25 @@
-<h1>Add exercise</h1>
+<h1>LIFTai</h1>
 
-<form action="addrecord/" method="post">
-{% csrf_token %}
-Exercise Name:<br>
-<input name="name">
-<br><br>
-Exercise Id (format 1/0xxx)<br>
-<input name="id">
-<br><br>
-group 1<br>
-<input name="g1">
-<br><br>
-group 2<br>
-<input name="g2">
-<br><br>
-group 3<br>
-<input name="g3">
-<br><br>
-group 4<br>
-<input name="g4">
-<br><br>
-group 5<br>
-<input name="g5">
-<br><br>
-<input type="submit" value="Submit">
-</form>
-
-<form action="sendVector/" method="post">
+<form action = "sendExercise/" method="post">
     {% csrf_token %}
-    <select name="exercise">
-        <option name = "0">Exercise 0</option>
-        <option name = "1">Exercise 1</option>
-        <option name = "2">Exercise 2</option>
-        <option name = "3">Exercise 3</option>
+    <select name="arms">
+        <option value="none">none</option>
+        <option value="exercise1">flat bench</option>
+        <option value="exercise2">overhead press</option>
+        <option value="exercise3">bent over rows</option>
+        <option value="exercise4">standard rows</option>
+        <option value="exercise5">tricep pushdown</option>
+        <option value="exercise6">chest fly</option>
+        <option value="exercise7">last pulldown</option>
+        <option value="exercise8">preacher curl</option>
+        <option value="exercise9">lat fly</option>
+        <option value="exercise10">incline bench</option>
+        <option value="exercise11">rear delt fly</option>
+        <option value="exercise12">chest press</option>
+        <option value="exercise13">reverse curls</option>
+        <option value="exercise14">hammer curls</option>
+        <option value="exercise15">dumbell rows</option>
+        <option value="exercise16">horizonat cable pull</option>
     </select>
     <input type="submit" value="Submit" />
 </form>
