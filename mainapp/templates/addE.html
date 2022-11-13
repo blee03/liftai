@@ -25,3 +25,14 @@ group 5<br>
 <br><br>
 <input type="submit" value="Submit">
 </form>
+
+<form action="sendVector/" method="post">
+    {% csrf_token %}
+    <select name="exercise">
+        <option name = "0">Exercise 0</option>
+        <option name = "1">Exercise 1</option>
+        <option name = "2">Exercise 2</option>
+        <option name = "3">Exercise 3</option>
+    </select>
+    <input type="submit" value="Submit" />
+</form>

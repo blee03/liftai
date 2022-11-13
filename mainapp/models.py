@@ -8,3 +8,6 @@ class Members(models.Model):
   group3 = models.DecimalField(max_digits=2, decimal_places=2)
   group4 = models.DecimalField(max_digits=2, decimal_places=2)
   group5 = models.DecimalField(max_digits=2, decimal_places=2)
+
+class Test(models.Model):
+  vector = models.CharField(max_length=69)
