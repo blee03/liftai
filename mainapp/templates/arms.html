@@ -1,9 +1,9 @@
-<h1><center><img src="image.png"
+{% load static %}
+<h1><center><img src="{% static 'logo.png' %}"
     height="100"
     length="250"
 </h1>
 </style>   
-
 <form action = "sendExercise/" method="post">
     {% csrf_token %}
     <select name="arms">
