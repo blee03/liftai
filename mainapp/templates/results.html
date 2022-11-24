@@ -1,11 +1,66 @@
-<p>alec should never be allowed to use html ever again</p>
+<!DOCTYPE html>
+<html>
+{% load static %}
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+<title>Your Workout</title>
+<style>
+    body{
+        font-family: 'Helvetica';
+    }
+</style>  
+    <!--logo-->
+    <img src={% static 'logo.png' %}>
 
-<table border="1">
-{% for x in htmlOutput %}
-<tr>
-<td>{{ x.name }}</td>
-<td>{{ x.description }}</td>
-<td>{{ x.link }}</td>
-</tr>
-{% endfor %}
-</table>
+    <!--background-->
+    <body style="background-color:#4C3A51;"></body>
+
+    <!--grid part-->
+    <head>
+        <style>
+        .item1 { grid-area: box1; }
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'box1';
+          gap: 70px;
+          background-color: #4C3A51;
+          padding-left: 80px;
+          padding-right: 90px;
+          padding-bottom: 30px;
+          border-radius: 15px;
+        }
+        
+        .grid-container > div {
+          background-color: #B25068;
+          text-align: left;
+          padding-top: 30px;
+          padding-right: 30px;
+          padding-bottom: 30px;
+          padding-left: 30px;
+          font-size: 25px;
+          color:#E7AB79;
+          border-radius: 15px;
+        }
+        </style>
+        </head>
+        <body>
+        {% for x in htmlOutput %}
+        <div class="grid-container">
+        
+          <div class="item1">
+            <div>
+                <iframe align="right" style="border-radius:15px;" width="600" height="300" src={{ x.link }} title="Hammer curls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br>
+            <img src={% static 'lift.png' %} style="border-radius:15px;width:200px;height:60px"><br><b>
+            {{ x.name }}</b><br><br><br>
+            <img src={% static 'how.png' %} style="border-radius:15px;width:200px;height:50px"><br><b>
+            {{ x.description }}</b>
+            
+          </div>
+        
+        </div>
+        {% endfor %}
+        </body>
+</html>

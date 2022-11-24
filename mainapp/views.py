@@ -57,6 +57,23 @@ def sendExerciseArms(request):
 "Using a single dumbell, brace yourself against the bench with your hand, and pull the dumbell from the floor to your chest, and return it to a neutral position",
 "Sit down on the bench, with your feet on the platforms, and pull the bar to your chest, leaning back slightly.\nReturn the bar to a neutral position")
 
+  aexcer =("https://www.youtube.com/embed/vK0haV9km24",
+"https://www.youtube.com/embed/tkp22GWXAMI",
+"https://www.youtube.com/embed/ERXQ3TFPBmI",
+"https://www.youtube.com/embed/PEbucj4fqhE",
+"https://www.youtube.com/embed/0irSr7p0JdY",
+"https://www.youtube.com/embed/iW2V2VJLHe0",
+"https://www.youtube.com/embed/i9OsIUNWAOU",
+"https://www.youtube.com/embed/MZFvO5VivzQ",
+"https://www.youtube.com/embed/CJxH6e2R1Ow",
+"https://www.youtube.com/embed/XVP0EPpKzlk",
+"https://www.youtube.com/embed/CJxH6e2R1Ow",
+"https://www.youtube.com/embed/dt0CYXuZTq8",
+"https://www.youtube.com/embed/fO82H3F0rw4",
+"https://www.youtube.com/embed/mEbC-y4hs9Q",
+"https://www.youtube.com/embed/oeJeIQjX7Mw",
+"https://www.youtube.com/embed/3_E8lkDdQJs")
+
   arrayOut = []
   arrayOut.append(1) if request.POST['arms'] == "exercise0" else arrayOut.append(0)
   arrayOut.append(1) if request.POST['arms'] == "exercise1" else arrayOut.append(0)
@@ -115,7 +132,7 @@ def sendExerciseArms(request):
   delete_everything(Website)
 
   for i in range(len(exersizes)):
-    testWebsite = Website(name = armExcer[exersizes[i]], description = armDescrip[exersizes[i]], link = "temp")
+    testWebsite = Website(name = armExcer[exersizes[i]], description = armDescrip[exersizes[i]], link = aexcer[exersizes[i]])
     testWebsite.save()
 
   return HttpResponseRedirect('results')  
@@ -141,6 +158,23 @@ def sendExerciseLegs(request):
  "Slowly lower the bar until it drops below the knees, make sure to slightly bend the legs", 
  "With weight on the hips, push upwards until straight, then let the weight slowly drop", 
  "With dumbells in both hands, bend one leg until it is nearly parallel with the floor, the other leg will remain on the bench")
+
+  lexcer =("https://www.youtube.com/embed/siIGhA0r4us",
+"https://www.youtube.com/embed/9GxQ96tlZns",
+"https://www.youtube.com/embed/ySAA8Ja01hM",
+"https://www.youtube.com/embed/WG_g-X-ss98",
+"https://www.youtube.com/embed/fDJLc2zepNM",#adductor
+"https://www.youtube.com/embed/Lz1Oy2i6-Go",
+"https://www.youtube.com/embed/YhDRqWG47qA", #calf
+"https://www.youtube.com/embed/6l32mMzVrFg", #leg extension
+"https://www.youtube.com/embed/YhDRqWG47qA", #calf machine
+"https://www.youtube.com/embed/nvwT_X5C_38",
+"https://www.youtube.com/embed/WNfmSUKg2Rs",
+"https://www.youtube.com/embed/fDJLc2zepNM", #band
+"https://www.youtube.com/embed/fDJLc2zepNM", #seated band
+"https://www.youtube.com/embed/H_nYiD_PYfA", #romaninan
+"https://www.youtube.com/embed/jJUsQAeO4OI", #hip thrust
+"https://www.youtube.com/embed/thGKGVXQdUE")
 
   arrayOut = []
   arrayOut.append(1) if request.POST['legs'] == "exercise0" else arrayOut.append(0)
@@ -200,7 +234,7 @@ def sendExerciseLegs(request):
   delete_everything(Website)
 
   for i in range(len(exersizes)):
-    testWebsite = Website(name = legExcer[exersizes[i]], description = legDescrip[exersizes[i]], link = "temp")
+    testWebsite = Website(name = legExcer[exersizes[i]], description = legDescrip[exersizes[i]], link= lexcer[exersizes[i]])
     testWebsite.save()
 
   return HttpResponseRedirect('results')  

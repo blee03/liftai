@@ -1,9 +1,15 @@
 {% load static %}
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+<title>Legs</title>
 <h1><center><img src="{% static 'logo.png' %}"
-    height="100"
-    length="250"
+    height="300"
+    length="750"
 </h1>
 </style>   
+
+<body style="background-color:#4C3A51;"></body>
+
+
 
 <form action = "sendExerciseLegs/" method="post">
     {% csrf_token %}
@@ -26,7 +32,7 @@
         <option value="exercise14">Hip Thrust</option>
         <option value="exercise15">Single Leg Squat</option>
     </select>
-    <input type="submit" value=&#8594 />
+    <input type="submit" value=&#8594 class="button"/>
 </form>
 
 <style>
@@ -39,9 +45,11 @@
         border: 100px;
         padding: 20px;
         border-radius: 15px;
-    
-    button {
-        background-color: #4CAF50; /* Green */
+        
+    }
+
+    .button {
+        background-color: #B25068;
         border: none;
         color: white;
         padding: 15px 32px;
@@ -49,6 +57,17 @@
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
+        border-radius: 15px;
+        padding:18px;
     }
-}
+
+    center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+    }
+
 </style>

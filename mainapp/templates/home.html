@@ -1,16 +1,11 @@
+{% load static %}
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+<title>Home</title>
 <div align="center">
-    <img src="static/logo.png"><br>
-    <a href="https://app.destinyitemmanager.com/"><img src="static/arm.png" style="padding-top:50px;padding-right:75px;width:300px;height:200px"></a>
-    <a href="https://app.destinyitemmanager.com/"><img src="static/leg.png" style="padding-top:75px;padding-right:50px;width:200px;height:300px"></a>
+    <img src={% static 'logo.png' %}><br>
+    <a href="arms"><img src={% static 'arm.png' %} style="padding-top:50px;padding-right:75px;width:300px;height:200px"></a>
+    <a href="legs"><img src={% static 'leg.png' %} style="padding-top:75px;padding-right:50px;width:200px;height:300px"></a>
 </div>
 
 <body style="background-color:#4C3A51;"></body>
 
-
-
-    <!--
-    <ul>
-        <li><a href="arms">Arms</a></li>
-        <li><a href="legs">Legs</a></li>
-    </ul>
-    -->
