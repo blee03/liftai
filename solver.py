@@ -1,12 +1,10 @@
 import numpy as np
 #UpperBodyMuscleGroups [Pec,Traps, Delts, Bicep, Forearm]
 #LowerBodyMuscleGroups [adductor,quadracep, glutes, calves, hammies]
-iters = 70000 #global number of iterations that the horrible evil thing runs for
+iters = 70000 #because there are about 65 thousand possible combinations (2^16), we should randomize about this many times
 Uworkingsolutions = []
 Lworkingsolutions = []
-#somehow import the excercise vectors into here
-    
-#somehow import the excercise vectors into here
+
 uexcer1 = np.array([0.95,0,0.1,0,0.7]) #flat_bench
 uexcer2 = np.array([0.2,0,0.8,0,0.7]) #overhead_press
 uexcer3 = np.array([0,1,0,0.75,0]) #bent_over_rows
@@ -52,31 +50,39 @@ Lexcer = np.array([lexcer1,lexcer2,lexcer3,lexcer4,lexcer5,lexcer6,
 lexcer7,lexcer8,lexcer9,lexcer10,lexcer11,lexcer12,
 lexcer13,lexcer14,lexcer15,lexcer16 ])
 
-#just trying stuff I will not lie
+#compute a list of valid linear combinations within a listed tolerance
 def computeCombo(Aexcer, solutionSet):
+    tolerance = 0.35 # 10% allowable tolerance
     result = [0,0,0,0,0]
     c = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     for i in range(16):
         c[i] = np.random.randint(0,2)
         result += Aexcer[i]*c[i]
-    #this is the worst thing that I have ever written
-    if (result[0] < 1.5 and result[0] >  .5):
-        if (result[1] < 1.5 and result[1]> 0.5):
-            if (result[2] < 1.5 and result[2] > 0.5):
-                if (result[3] < 1.5 and result[3] > 0.5):
-                    if (result[4] < 1.5 and result[4] > 0.5):
+    if (result[0] < 1+tolerance and result[0] >  1-tolerance):
+        if (result[1] < 1+tolerance and result[1]> 1-tolerance):
+            if (result[2] < 1+tolerance and result[2] > 1-tolerance):
+                if (result[3] < 1+tolerance and result[3] > 1-tolerance):
+                    if (result[4] < 1+tolerance and result[4] > 1-tolerance):
                             solutionSet.append(c)
     return solutionSet
-for horribleiterations in  range(iters):
+for upperbodyiterations in  range(iters):
     Uworkingsolutions = computeCombo(Aexcer,Uworkingsolutions)
-for evenworseiterations in  range(iters):
+for lowerbodyiterations in  range(iters):
     Lworkingsolutions = computeCombo(Lexcer,Lworkingsolutions)
 
 
 file = open("arms.txt", "w+")
-file.write(str(Uworkingsolutions) + "\n")
+for outer in range(len(Uworkingsolutions)):
+    for inner in range(16):
+        file.write(str(Uworkingsolutions[outer][inner]))
+        file.write(" ")
+    file.write("\n")
 file.close()
 
 file2 = open("legs.txt", "w+")
-file2.write(str(Lworkingsolutions)+"\n")
+for outer2 in range(len(Lworkingsolutions)):
+    for inner2 in range(16):
+        file2.write(str(Lworkingsolutions[outer2][inner2]))
+        file2.write(" ")
+    file2.write("\n")
 file2.close()
